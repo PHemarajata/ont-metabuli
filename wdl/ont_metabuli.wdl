@@ -33,13 +33,23 @@ workflow ont_metabuli {
     }
 
     parameter_meta {
+        platform:        "'ont' (long read) or 'illumina' (paired-end). Selects the whole tool chain: chopper vs fastp, minimap2 map-ont vs sr, Metabuli --seq-mode 3 vs 2, Flye vs MEGAHIT/SPAdes. Set per RUN, not per sample."
         sample_ids:      "One entry per sample. From a Terra sample_set: this.samples.sample_id"
-        fastqs:          "ONT FASTQ (.fastq.gz) per sample, same order as sample_ids"
+        fastqs:          "One FASTQ (.fastq.gz) per sample, same order as sample_ids. For platform='illumina' these are the R1 files."
+        fastqs_2:        "R2 FASTQ per sample, same order as fastqs. REQUIRED when platform='illumina'; leave empty for 'ont'."
         sample_types:    "Optional per-sample type. Any of control/negative_control/ntc/blank/neg marks a negative control and switches the statistics to contaminant-aware mode."
         batches:         "Optional per-sample batch. Negative controls are matched to samples of the same batch."
         metabuli_db_tar: "Metabuli database tarball in GCS. Stage it once with stage_database.wdl."
         host_fasta:      "Host genome FASTA(.gz) to filter out, e.g. T2T-CHM13v2. Ignored when host_mmi is supplied."
-        host_mmi:        "Pre-built minimap2 map-ont index of the host; skips index building."
+        host_mmi:        "Pre-built minimap2 index of the host; skips index building. Must match the platform preset (map-ont / sr)."
+        min_qual:        "ONT only. Minimum mean read quality (chopper)."
+        min_len:         "ONT only. Minimum read length in bp (chopper)."
+        sr_min_qual:     "Illumina only. Per-base quality threshold (fastp)."
+        sr_min_len:      "Illumina only. Minimum read length after trimming (fastp)."
+        adapter_fasta:   "Illumina only, optional. Adapter FASTA; fastp auto-detects for paired-end when omitted."
+        assembler:       "Optional override. Defaults to flye for 'ont' and megahit for 'illumina'; 'spades' runs metaSPAdes. Long- and short-read assemblers are not interchangeable across platforms."
+        flye_read_type:  "ONT only. nano-hq | nano-raw | nano-corr."
+        min_contig_len:  "Illumina only. Contigs shorter than this are dropped."
         assemble_taxa:   "Taxids to assemble de novo, e.g. ['562','10239']."
         consensus_taxids: "Taxids for reference-based consensus; pair positionally with consensus_references."
     }
