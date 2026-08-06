@@ -1,0 +1,4 @@
+sample,fastq,sample_type,batch
+TEST01,assets/test_reads/TEST01.fastq.gz,sample,run1
+TEST02,assets/test_reads/TEST02.fastq.gz,sample,run1
+NTC01,assets/test_reads/NTC01.fastq.gz,negative_control,run1

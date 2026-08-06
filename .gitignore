@@ -1,0 +1,21 @@
+.nextflow*
+work/
+results/
+test_out/
+references/
+databases/
+bin_ext/
+env.sh
+*.log
+cromwell-executions/
+cromwell-workflow-logs/
+wdl/test/ont_metabuli.stub.wdl
+wdl/test/metadata.json
+wdl/test/*.log
+wdl/test/work/
+wdl/test/work/dummy_db.tar.gz
+
+# smoke-test outputs (regenerate with smoketest/run*.sh) — some are multi-GB
+smoketest/results*/
+smoketest/work*/
+.DS_Store

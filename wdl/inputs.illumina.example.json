@@ -1,0 +1,47 @@
+{
+  "ont_metabuli.platform": "illumina",
+  "ont_metabuli.sample_ids": [
+    "SAMPLE01",
+    "SAMPLE02",
+    "NTC01"
+  ],
+  "ont_metabuli.fastqs": [
+    "gs://YOUR-WORKSPACE-BUCKET/fastq/SAMPLE01_R1.fastq.gz",
+    "gs://YOUR-WORKSPACE-BUCKET/fastq/SAMPLE02_R1.fastq.gz",
+    "gs://YOUR-WORKSPACE-BUCKET/fastq/NTC01_R1.fastq.gz"
+  ],
+  "ont_metabuli.sample_types": [
+    "sample",
+    "sample",
+    "negative_control"
+  ],
+  "ont_metabuli.batches": [
+    "run1",
+    "run1",
+    "run1"
+  ],
+  "ont_metabuli.metabuli_db_tar": "gs://YOUR-WORKSPACE-BUCKET/metabuli/refseq_standard.tar.gz",
+  "ont_metabuli.host_fasta": "gs://YOUR-WORKSPACE-BUCKET/reference/chm13v2.0.fa.gz",
+  "ont_metabuli.stats_rank": "species",
+  "ont_metabuli.stats_min_reads": 10,
+  "ont_metabuli.stats_min_abundance": 0.0001,
+  "ont_metabuli.stats_alpha": 0.05,
+  "ont_metabuli.classify_cpu": 16,
+  "ont_metabuli.classify_memory_gb": 120,
+  "ont_metabuli.metabuli_max_ram_gb": 100,
+  "ont_metabuli.classify_disk_gb": 300,
+  "ont_metabuli.classify_disk_type": "SSD",
+  "ont_metabuli.assemble_unclassified": false,
+  "ont_metabuli.assemble_taxa": [],
+  "ont_metabuli.classify_contigs": false,
+  "ont_metabuli.consensus_taxids": [],
+  "ont_metabuli.consensus_references": [],
+  "ont_metabuli.fastqs_2": [
+    "gs://YOUR-WORKSPACE-BUCKET/fastq/SAMPLE01_R2.fastq.gz",
+    "gs://YOUR-WORKSPACE-BUCKET/fastq/SAMPLE02_R2.fastq.gz",
+    "gs://YOUR-WORKSPACE-BUCKET/fastq/NTC01_R2.fastq.gz"
+  ],
+  "ont_metabuli.sr_min_qual": 15,
+  "ont_metabuli.sr_min_len": 50,
+  "ont_metabuli.assembler": "megahit"
+}

@@ -1,0 +1,44 @@
+{
+  "ont_metabuli.sample_ids": [
+    "TEST01",
+    "TEST02",
+    "NTC01"
+  ],
+  "ont_metabuli.fastqs": [
+    "/Users/peerahemarajata/Downloads/ont_metagenomics/smoketest/reads/SAMPLE01.fastq.gz",
+    "/Users/peerahemarajata/Downloads/ont_metagenomics/smoketest/reads/SAMPLE02.fastq.gz",
+    "/Users/peerahemarajata/Downloads/ont_metagenomics/smoketest/reads/HOSTTEST.fastq.gz"
+  ],
+  "ont_metabuli.sample_types": [
+    "sample",
+    "sample",
+    "negative_control"
+  ],
+  "ont_metabuli.batches": [
+    "run1",
+    "run1",
+    "run1"
+  ],
+  "ont_metabuli.metabuli_db_tar": "/Users/peerahemarajata/Downloads/ont_metagenomics/wdl/test/work/dummy_db.tar.gz",
+  "ont_metabuli.assemble_unclassified": false,
+  "ont_metabuli.assemble_taxa": [],
+  "ont_metabuli.classify_contigs": false,
+  "ont_metabuli.consensus_taxids": [],
+  "ont_metabuli.consensus_references": [],
+  "ont_metabuli.classify_cpu": 2,
+  "ont_metabuli.classify_memory_gb": 4,
+  "ont_metabuli.classify_disk_gb": 20,
+  "ont_metabuli.classify_disk_type": "HDD",
+  "ont_metabuli.host_cpu": 2,
+  "ont_metabuli.host_memory_gb": 4,
+  "ont_metabuli.preemptible_tries": 0,
+  "ont_metabuli.stats_min_reads": 5,
+  "ont_metabuli.stats_min_abundance": 0.001,
+  "ont_metabuli.sankey_min_reads": 2,
+  "ont_metabuli.min_bin_reads": 50,
+  "ont_metabuli.Flye.cpu": 2,
+  "ont_metabuli.Flye.memory_gb": 4,
+  "ont_metabuli.Chopper.cpu": 2,
+  "ont_metabuli.Minimap2Index.cpu": 2,
+  "ont_metabuli.skip_host_removal": true
+}

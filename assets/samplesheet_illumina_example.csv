@@ -1,0 +1,4 @@
+sample,fastq,fastq_2,sample_type,batch
+SAMPLE01,/absolute/path/S1_R1.fastq.gz,/absolute/path/S1_R2.fastq.gz,sample,run1
+SAMPLE02,/absolute/path/S2_R1.fastq.gz,/absolute/path/S2_R2.fastq.gz,sample,run1
+NTC01,/absolute/path/NTC_R1.fastq.gz,/absolute/path/NTC_R2.fastq.gz,negative_control,run1

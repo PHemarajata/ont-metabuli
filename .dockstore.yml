@@ -1,0 +1,19 @@
+# Dockstore GitHub App registration.
+# Every branch/tag pushed to GitHub becomes a workflow version on Dockstore.
+# Paths are absolute from the repository root.
+version: 1.2
+
+workflows:
+
+  # main analysis workflow (ONT or Illumina paired-end)
+  - name: ont-metabuli
+    subclass: WDL
+    primaryDescriptorPath: /wdl/ont_metabuli.wdl
+    testParameterFiles:
+      - /wdl/inputs.example.json
+      - /wdl/inputs.illumina.example.json
+
+  # one-off helper: pull a Metabuli database into the workspace bucket
+  - name: ont-metabuli-stage-database
+    subclass: WDL
+    primaryDescriptorPath: /wdl/stage_database.wdl

@@ -1,0 +1,3 @@
+sample,fastq,fastq_2,sample_type,batch
+PE01,/Users/peerahemarajata/Downloads/ont_metagenomics/smoketest/reads_pe/PE01_R1.fastq.gz,/Users/peerahemarajata/Downloads/ont_metagenomics/smoketest/reads_pe/PE01_R2.fastq.gz,sample,run1
+PE02,/Users/peerahemarajata/Downloads/ont_metagenomics/smoketest/reads_pe/PE02_R1.fastq.gz,/Users/peerahemarajata/Downloads/ont_metagenomics/smoketest/reads_pe/PE02_R2.fastq.gz,sample,run1

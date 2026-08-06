@@ -1,0 +1,30 @@
+# Native arm64 (Apple Silicon) environment for ont-metabuli.
+# NOTE: Metabuli is installed separately as a native universal binary via
+# setup.sh (bioconda's metabuli is x86-only). Everything here has osx-arm64
+# builds, so this env runs natively — no Rosetta.
+name: ont-metabuli
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.11
+  - chopper>=0.10       # ONT read filtering
+  - fastp>=0.23         # Illumina paired-end trimming/QC (--platform illumina)
+  - minimap2=2.30
+  - samtools=1.23
+  - pandas
+  - numpy
+  - scipy
+  - plotly
+  # optional extras
+  - krona
+  # ---- optional assembly module (only needed if you enable --assemble_* ) ----
+  - flye>=2.9.4        # metaFlye de novo assembly (ONT)
+  - racon>=1.5.0       # fast, model-free polishing (default polisher)
+  - bcftools>=1.20     # variant calling for reference-based consensus
+  - seqkit>=2.10       # read subsetting / assembly stats
+  # medaka (higher-accuracy ONT consensus) conflicts with python 3.11 + samtools
+  # here, so it lives in a SEPARATE env: `./setup.sh --medaka` creates
+  # `ont-metabuli-medaka`. Only needed for --polisher medaka.
+  # abricate (AMR screen) has an unmet perl dep on osx-arm64 — run via Docker
+  # (-profile docker) or on Linux; see README "AMR screening".
